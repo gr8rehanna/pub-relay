@@ -16,9 +16,8 @@ FROM arm64v8/ubuntu:19.10
 ARG UID=991
 ARG GID=991
 
-RUN \
- apt-get update && \
- apt-get install -y libpq5 
+RUN  apt update
+RUN apt-get install -y libpq5 
 
 RUN \
  mkdir -p /opt/relay && \
