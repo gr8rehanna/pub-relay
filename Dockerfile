@@ -22,17 +22,17 @@ COPY --from=builder /opt/aode-relay/target/release/relay /usr/bin/aode-relay
 ENV HOSTNAME relay.wansaw.com
 ENV ADDR 0.0.0.0
 ENV PORT 80
-ENV DEBUG false
-ENV VALIDATE_SIGNATURES true
-ENV HTTPS true
+ENV DEBUG true
+ENV VALIDATE_SIGNATURES false
+ENV HTTPS false
 ENV PRETTY_LOG false
-ENV PUBLISH_BLOCKS true
+ENV PUBLISH_BLOCKS false
 ENV SLED_PATH /opt/aode-relay/sled/db-0.34
 ENV RUST_LOG warn
 ENV TELEGRAM_TOKEN 5820884837:AAGnnOYZimFbhl8frvpHyGODuDNARwpPrv0
 ENV TELEGRAM_ADMIN_HANDLE amigr8
 # Since this container is intended to run behind reverse proxy
 # we don't need HTTPS in here.
-ENV HTTPS false
+#ENV HTTPS false
 
 CMD ["/usr/bin/aode-relay"]
