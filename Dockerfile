@@ -15,7 +15,6 @@ RUN cargo install --path .
 FROM arm64v8/ubuntu:20.04
 #FROM ubuntu:20.04
 
-RUN apt-get update && apt install -y libpq5 git cargo
 
 ARG UID=991
 ARG GID=991
@@ -30,6 +29,8 @@ RUN \
     --ingroup relay \
     --uid "${UID}" \
     relay
+RUN apt-get update 
+RUN apt install -y libpq5 git 
 
 COPY --from=diesel /usr/local/bin/diesel /usr/local/bin/diesel
 COPY --from=builder /usr/local/cargo/bin/relay /usr/local/bin/relay
