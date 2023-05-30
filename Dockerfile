@@ -11,7 +11,7 @@ RUN git clone -b master https://git.asonix.dog/asonix/ap-relay /opt/relay
 WORKDIR /opt/relay
 RUN cargo install --path .
 
-FROM arm64v8/ubuntu:19.10
+FROM ubuntu:22.04
 
 ARG UID=991
 ARG GID=991
