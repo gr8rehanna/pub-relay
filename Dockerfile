@@ -7,6 +7,12 @@ FROM arm64v8/rust:1.42.0-buster AS builder
 ARG TAG
 ARG GIT_REPOSITORY
 ARG BUILD_DATE
+ARG UID=991
+ARG GID=991
+
+
+RUN apt-get update 
+RUN apt install -y libpq5 git 
 
 RUN git clone -b master https://git.asonix.dog/asonix/ap-relay /opt/relay
 WORKDIR /opt/relay
@@ -16,8 +22,6 @@ FROM arm64v8/ubuntu:20.04
 #FROM ubuntu:20.04
 
 
-ARG UID=991
-ARG GID=991
 
 
 RUN \
@@ -29,8 +33,7 @@ RUN \
     --ingroup relay \
     --uid "${UID}" \
     relay
-RUN apt-get update 
-RUN apt install -y libpq5 git 
+
 
 COPY --from=diesel /usr/local/bin/diesel /usr/local/bin/diesel
 COPY --from=builder /usr/local/cargo/bin/relay /usr/local/bin/relay
