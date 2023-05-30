@@ -18,7 +18,6 @@ ARG GID=991
 
 RUN \
  apt-get update && \
- apt-get upgrade -y && \
  apt-get install -y libpq5 
 
 RUN \
