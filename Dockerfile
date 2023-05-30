@@ -11,12 +11,12 @@ RUN git clone -b master https://git.asonix.dog/asonix/ap-relay /opt/relay
 WORKDIR /opt/relay
 RUN cargo install --path .
 
-FROM ubuntu:22.04
+FROM ubuntu:20.04
 
 ARG UID=991
 ARG GID=991
 
-RUN apt-get install -y libpq5 
+RUN apt-get update && apt install -y libpq5 
 
 RUN \
  mkdir -p /opt/relay && \
