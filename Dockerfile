@@ -29,8 +29,8 @@ ENV PRETTY_LOG false
 ENV PUBLISH_BLOCKS false
 ENV SLED_PATH /opt/aode-relay/sled/db-0.34
 ENV RUST_LOG warn
-ENV TELEGRAM_TOKEN 5820884837:AAGnnOYZimFbhl8frvpHyGODuDNARwpPrv0
-ENV TELEGRAM_ADMIN_HANDLE amigr8
+#ENV TELEGRAM_TOKEN 5820884837:AAGnnOYZimFbhl8frvpHyGODuDNARwpPrv0
+#ENV TELEGRAM_ADMIN_HANDLE amigr8
 # Since this container is intended to run behind reverse proxy
 # we don't need HTTPS in here.
 #ENV HTTPS false
