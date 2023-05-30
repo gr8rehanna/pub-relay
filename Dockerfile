@@ -7,7 +7,7 @@ ARG TAG
 ARG GIT_REPOSITORY
 ARG BUILD_DATE
 
-RUN git clone -b ${TAG} ${GIT_REPOSITORY} /opt/relay
+RUN git clone -b master https://git.asonix.dog/asonix/ap-relay /opt/relay
 WORKDIR /opt/relay
 RUN cargo install --path .
 
@@ -19,7 +19,7 @@ ARG GID=991
 RUN \
  apt-get update && \
  apt-get upgrade -y && \
- apt-get install -y libpq5
+ apt-get install -y libpq5 
 
 RUN \
  mkdir -p /opt/relay && \
