@@ -2,6 +2,8 @@ FROM asonix/diesel-cli:v1.4.0-r0-arm64v8 AS diesel
 
 FROM arm64v8/rust:1.42.0-buster AS builder
 
+FROM arm64v8/ubuntu:20.04
+
 
 # Set up git remote
 ARG TAG
@@ -18,8 +20,6 @@ RUN git clone -b master https://git.asonix.dog/asonix/ap-relay /opt/relay
 WORKDIR /opt/relay
 RUN cargo install --path .
 
-FROM arm64v8/ubuntu:20.04
-#FROM ubuntu:20.04
 
 
 
