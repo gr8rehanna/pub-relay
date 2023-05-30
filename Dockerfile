@@ -13,14 +13,14 @@ ARG UID=991
 ARG GID=991
 
 
-RUN apt-get update 
-RUN apt install -y libpq5 git 
+
 
 RUN git clone -b master https://git.asonix.dog/asonix/ap-relay /opt/relay
 WORKDIR /opt/relay
 RUN cargo install --path .
 
-
+RUN apt-get update 
+RUN apt install -y libpq5 
 
 
 
