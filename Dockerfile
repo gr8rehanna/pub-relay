@@ -33,8 +33,8 @@ ENV RESTRICTED_MODE true
 ENV LOCAL_DOMAINS wansaw.com
 ENV TELEGRAM_TOKEN 5820884837:AAHfAXMz58JsHZL5MMKNTuqPTosXNB8gddo
 ENV TELEGRAM_ADMIN_HANDLE amigr8
-ENV FOOTER_BLURB '"NEW Contact <a href=\"https://masto.asonix.dog/@asonix\">@asonix</a> for inquiries"'
-ENV LOCAL_BLURB= '"<p>NEW Welcome to my cool relay where I have cool relay things happening. I hope you enjoy your stay!</p>"'
+ENV FOOTER_BLURB Footer Goes Here
+ENV LOCAL_BLURB= <p>NEW Welcome to my cool relay where I have cool relay things happening. I hope you enjoy your stay!</p>
 # Since this container is intended to run behind reverse proxy
 # we don't need HTTPS in here.
 #ENV HTTPS false
